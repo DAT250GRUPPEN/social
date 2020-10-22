@@ -1,8 +1,0 @@
-setup.py
-atsocial/__init__.py
-atsocial/views.py
-atsocial.egg-info/PKG-INFO
-atsocial.egg-info/SOURCES.txt
-atsocial.egg-info/dependency_links.txt
-atsocial.egg-info/requires.txt
-atsocial.egg-info/top_level.txt
