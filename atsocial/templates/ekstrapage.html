@@ -1,0 +1,26 @@
+
+
+
+
+
+{% extends 'layout.html' %}
+
+<!-- under her er navnet på menysiden i taben-->
+{% block title %}
+{{page.title}}
+{% endblock title %}
+
+
+{% block meny %}
+    
+{% for page in pages %}
+{% endblock meny %}
+    
+<!-- Dette er når en går inn i siden -->
+{% block content%}
+<h1>{{page.title}} lala</h1>    
+<p>{{page.text}}</p>
+<p> Her kommer innholdet til de forskjellige sidene</p>
+{% endblock content %}
+
+<!-- Dette er hva som skjer per side man klikker seg inn på fra hovedmenyen -->

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% block title %}
+            {% endblock title%}
+        </title> <!--Defines the title of a document-->  
+        
+        {% block style %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <!-- href er selve linken man refererer til eller dokumentet med html man refererer til --> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8"> <!--Defines metadata about an HTML document-->
+        <meta name="author" content="Karina">
+        <meta name ="description" content="Main page">
+        <meta name="keywords" content="feed, HTML, CSS">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <!--denne får den til å tilpasse seg forskjellige skjermer-->   
+        {% endblock style%}
+        
+        <style></style>
+    </head>
+    <body>
+        <header>
+          {% block meny %}
+
+          {% endblock meny %}
+
+
+              
+        </header>
+        {% block content %}
+        {% endblock content %}
+        <footer>
+            <h3> Dette er en footer, kommer tilbake til denne. </h3>
+        </footer>
+    </body>
+</html>
+
+<!-- en generell side med layout, også hovedsiden og de mindre sidene-->
