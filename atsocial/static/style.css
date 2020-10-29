@@ -6,6 +6,7 @@
         margin: 0;
         }
     h1 {color: #2e4153;}
+    h2 {color: #2e4153;}
     p {color: #5D6D7E;}
     ul {
             /*  Prøv å få denne stickyen til å funke senere! feilen som skjer er at dropdown menyen klikker.*/
