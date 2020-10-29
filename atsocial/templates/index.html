@@ -17,46 +17,49 @@
         <div class="tooltip"><i class= '{{page.figure_name }}'></i>
         <span class="tooltiptext">{{page.title}}</span>
         </div>
-        {% if page.id==1 %}
+        {% if page.id == 1 %}
         <a class="active"></a>
         {% endif %}
+        1 <!-- Disse er kun markeringer for egen del-->
         </a>
-        </li>
+        
     {% endfor %}  
 
 
-
     
-<!-- Her er dropdown meny-->
-<li class="dropdown" style="float:right;"> <!--settes til høyre-->
-    <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-bars"></i></a>
-    <div class="dropdown-content">
-    <a href=("ekstrapage", ekstrapage_id = ekstrapage.id >
+    <!-- Her er dropdown meny-->
+    <li class="dropdown" style="float:right;"> <!--settes til høyre-->
+        <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-bars"></i></a>
+        <div class="dropdown-content">
+        <a href=("ekstrapage", ekstrapage_id = ekstrapage.id >
 
-    <i class="fa fa-cogs"></i> Settings</a>
-    <a href="#"><i class="fa fa-question-circle-o"></i> Help/FAQ</a>
-    <a href="#"><i class="fa fa-lock"></i> Log Out</a>
-    </div> 
-    </li>
-<!---->
-
+        <i class="fa fa-cogs"></i> Settings</a>
+        <a href="ekstrapage.html"><i class="fa fa-question-circle-o"></i> Help/FAQ</a>
+        <a href="ekstrapage.html"><i class="fa fa-lock"></i> Log Out</a>
+        2 <!-- Disse er kun markeringer for egen del-->
+        </div> 
+        </li>
+    <!---->
 
 
 
 <!-- Her er søkefeltet-->
     <li class ="search-container">
-        <form action="/action_page.php">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <form action="/action_page.php" method="GET">
+        <label for="searchword"></label>
+        <input id="searchword" type="text" name="search" placeholder="Search..." >
+        <button type="submit"><i class="fa fa-search"></i></button>3 <!-- Disse er kun markeringer for egen del-->
         </li></form>          
-
+    </li>
 </ul>
 {% endblock meny %}
 
 
 
 {% block content %}
-<p> Her er innholdet</p>
+<p> Her er innholdet egentlig <br> Men velger å koble til login siden her for å se den</p>
+<a href="/atsocial/templates/login.html" > klikk her</a>
 {% endblock content %}
+
 
     

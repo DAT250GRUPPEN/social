@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
     <head>
         <title>
             {% block title %}
@@ -26,13 +26,14 @@
 
           {% endblock meny %}
 
-
-              
         </header>
         {% block content %}
         {% endblock content %}
         <footer>
-            <h3> Dette er en footer, kommer tilbake til denne. </h3>
+        
+        {% block foot %}
+        <h3> Dette er en footer, kommer tilbake til denne. </h3>
+        {% endblock foot %}
         </footer>
     </body>
 </html>

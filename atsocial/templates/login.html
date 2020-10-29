@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>
+        Login/Register
+        </title>
+        <link rel="stylesheet" href="/atsocial/static/style.css">
+    </head>
+        
+        
+    <body>
+        <ul>
+        <li><a>
+        <form action="" method="GET"> <!--Hva skal siden gjøre etter "submit"?-->
+            <h1>Log in</h1>
+            <h2>Please input E-mail and password:</h2>
+            <label for="emailtag">E-mail:</label>
+            <input id="emailtag" type="email" name="useremail" placeholder="Enter E-mail..."><br><br> <!--Det som tastes inn må inneholde en @-->
+            <label for ="passtag">Password:</label>
+            <input id="passtag" type="password" name="" placeholder="Enter password..."><br><br><!--pasordet blir skjult-->
+            <input type="submit" name="" value="submit">
+        </form>
+        </a></li>
+    </ul>
+
+
+
+    <ul>
+        <li> 
+            <form method="GET">
+                <h2>Register! <br></h2>
+
+                <label for="nametag">Firstname:</label>
+                <input id="nametag" type="firstname" name="username" placeholder="Firstname"> <!--Det som tastes inn må inneholde en @-->
+                <br><br>          
+                <label for="surnametag">Surname:</label>
+                <input id="surnametag" type="surname" name="usersurname" placeholder="Surname"> <!--Det som tastes inn må inneholde en @-->
+                <br><br>
+                <label for="emailtag">E-mail:</label>
+                <input id="emailtag" type="email" name="useremail" placeholder="E-mail"> <!--Det som tastes inn må inneholde en @-->
+                <br><br>
+                <p>Age group:</p> <!--kanskej legge inn en kalender-funskjon for å legge inn fødselsdato-->
+                <select name="age">
+                <option value="18-24">18-24</option>
+                <option value="25-34">25-34</option>
+                <option value="25-34">35-44</option>
+                <option value="25-34">45-100</option>
+                </select>
+                <br><br>
+                <p>Gender: </p>
+                <ul>
+                    <label for="female">Female:</label>
+                    <input type="radio" id="female" type="gender" name="usergender" value="Your gender"> <!--Det som tastes inn må inneholde en @-->
+                    <label for="male"> Male:</label>
+                    <input type="radio" id="male" type="gender" name="usergender" value="Your gender"><!--Det som tastes inn må inneholde en @-->
+                    <label for="notdefined">Not defined by the above:</label>
+                    <input type="radio" id="notdefined" type="gender" name="usergender" value="Your gender"> <!--Det som tastes inn må inneholde en @-->
+                </ul><br>
+                <label for="usertext"><p>About yourself:</p></label>
+                <textarea name="name" id="usertext" cols="50" rows="3" placeholder="Something about yourself..."></textarea>
+                <br><br>
+                <label for="newpasswordtag">New password:</label>
+                <input id="newpasswordtag" type="newpassword" name="usernewpassword" placeholder="New password"> <!--Det som tastes inn må inneholde en @-->
+                <br><br>
+                <label for="confirmpasswordtag">Confirm new password:</label>
+                <input id="confirmpasswordtag" type="confirmpassword" name="userconfirmpassword" placeholder="Confirm password"> <!--Det som tastes inn må inneholde en @-->
+                <br><br><br>
+                <input type="submit" name="" value="Register">
+            </form>
+        </li>
+    </ul>    
+    </body>
+   
+  
+
+
+        
+        
+</html>    
