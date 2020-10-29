@@ -13,9 +13,13 @@
             /* position: -webkit-sticky; /* **Safari trenger denne*/
             /* position: sticky; /* *Slik at menyen holder seg på toppen når en scroller*/
             /* top: 0; /* må definere */
+
+
+        /* OBS OBS! IKKE GLEM Å ENDRE HER!!! */
+
         list-style-type: none;
         margin: 0;
-        padding: 20px;
+        padding: 20px; 
         overflow: hidden;
         background-color: white;
         border: none;
