@@ -4,21 +4,58 @@
         <title>
         Login/Register
         </title>
+        <link rel="stylesheet" href="/atsocial/static/style.css">
     </head>
         
         
     <body>
+        <ul>
         <li><a>
         <form action="" method="GET"> <!--Hva skal siden gjøre etter "submit"?-->
             <h1>Log in</h1>
             <h2>Please input E-mail and password:</h2>
             <label for="emailtag">E-mail:</label>
-            <input id="emailtag" type="email" name="useremail" placeholder="Enter E-mail..."><br> <!--Det som tastes inn må inneholde en @-->
+            <input id="emailtag" type="email" name="useremail" placeholder="Enter E-mail..."><br><br> <!--Det som tastes inn må inneholde en @-->
             <label for ="passtag">Password:</label>
-            <input id="passtag" type="password" name="" placeholder="Enter password..."><br><!--pasordet blir skjult-->
+            <input id="passtag" type="password" name="" placeholder="Enter password..."><br><br><br><!--pasordet blir skjult-->
             <input type="submit" name="" value="submit">
         </form>
         </a></li>
+    </ul>
+
+
+
+    <ul>
+        <li> 
+            <form method="GET">
+                <h2>Register! <br></h2>
+
+                <label for="nametag">Firstname:</label>
+                <input id="nametag" type="firstname" name="username" placeholder="Your firstname"> <!--Det som tastes inn må inneholde en @-->
+                <br><br>          
+                <label for="surnametag">Surname:</label>
+                <input id="surnametag" type="surname" name="usersurname" placeholder="Your surname"> <!--Det som tastes inn må inneholde en @-->
+                <br><br>
+                <label for="emailtag">E-mail:</label>
+                <input id="emailtag" type="email" name="useremail" placeholder="Your e-mail"> <!--Det som tastes inn må inneholde en @-->
+                <br><br>
+                <p>Gender: </p>
+                <label for="female">Female:</label>
+                <input type="radio" id="female" type="gender" name="usergender" value="Your gender"> <!--Det som tastes inn må inneholde en @-->
+                <label for="male">Male:</label>
+                <input type="radio" id="male" type="gender" name="usergender" value="Your gender"><!--Det som tastes inn må inneholde en @-->
+                <label for="notdefined">Not defined by the above:</label>
+                <input type="radio" id="notdefined" type="gender" name="usergender" value="Your gender"> <!--Det som tastes inn må inneholde en @-->
+                <br><br>
+                <label for="newpasswordtag">New password:</label>
+                <input id="newpasswordtag" type="newpassword" name="usernewpassword" placeholder="Your new password"> <!--Det som tastes inn må inneholde en @-->
+                <br><br>
+                <label for="confirmpasswordtag">Confirm new password:</label>
+                <input id="confirmpasswordtag" type="confirmpassword" name="userconfirmpassword" placeholder="Confirm your new password"> <!--Det som tastes inn må inneholde en @-->
+                
+            </form>
+        </li>
+    </ul>    
     </body>
    
   
