@@ -8,15 +8,12 @@
     h1 {color: #2e4153;}
     h2 {color: #2e4153;}
     p {color: #5D6D7E;}
-    ul {
+    ul {color: #5D6D7E;}
+    .meny {
             /*  Prøv å få denne stickyen til å funke senere! feilen som skjer er at dropdown menyen klikker.*/
             /* position: -webkit-sticky; /* **Safari trenger denne*/
             /* position: sticky; /* *Slik at menyen holder seg på toppen når en scroller*/
             /* top: 0; /* må definere */
-
-
-        /* OBS OBS! IKKE GLEM Å ENDRE HER!!! */
-
         list-style-type: none;
         margin: 0;
         padding: 20px; 
@@ -24,6 +21,7 @@
         background-color: white;
         border: none;
         font-size: 35px;
+        color: #2e4153;
         }
 
     li {

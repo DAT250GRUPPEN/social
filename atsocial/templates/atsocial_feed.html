@@ -21,8 +21,11 @@
             margin: 0;
             }
         h1 {color: #2e4153;}
+        h2 {color: #2e4153;}
         p {color: #5D6D7E;}
-        ul {
+        ul {color: #5D6D7E;}
+
+        .meny {
             /*  Prøv å få denne stickyen til å funke senere! feilen som skjer er at dropdown menyen klikker.*/
             /* position: -webkit-sticky; /* **Safari trenger denne*/
             /* position: sticky; /* *Slik at menyen holder seg på toppen når en scroller*/
@@ -34,7 +37,7 @@
             background-color: white;
             border: none;
             font-size: 35px;
-
+            color: #2e4153;
             }
 
         li {
@@ -43,7 +46,7 @@
                     width: 100%;
                     overflow: auto;*/
             }
-        li a, .dropbtn {/* selve meny knappene*/
+        li a, .dropbtn {/* selve ul meny knappene*/
             display: inline-block;
             color:  #2e4153;
             text-align: center;
@@ -128,7 +131,7 @@
         display: block;
         }
         /*  og denne så ikke så bra ut, sletter ikke in case vi trenger den likevel.
-        li.right { *plasserer meny på høyre side *
+        li.right { *plassererul meny på høyre side *
             float: right;
             }
         @media screen and (max-width: 600px) { 
@@ -180,7 +183,7 @@
     
     <body>
     <header>
-    <ul> <!--Bruker bare list of links til navbar, meny knappene innhold hver for seg-->
+    <ul class="meny"> <!--Bruker bare list of links til navbar,ul meny knappene innhold hver for seg-->
         <li><a class="active" href="#Homeurl">
             <div class="tooltip"><i class="fa fa-home"></i>
             <span class="tooltiptext">HOMEie</span>
@@ -217,6 +220,10 @@
         <p> <strong>Lorem</strong> ipsum <em>dolor</em> sit amet consectetur adipisicing elit. Temporibus quas perferendis at numquam repudiandae saepe, non facere veritatis error dignissimos ex illo consectetur nihil libero earum molestiae dolores maiores accusantium.</p>
             <!--Her må (referansen til) funskjonen til feeden settes inn-->
     </div>
+    <ul>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus qui vitae mollitia sapiente dolores quo impedit dolore rem esse aperiam magnam, illum sequi, nostrum deleniti fuga, dignissimos recusandae quibusdam delectus!</ul>
+    <br><br><br><br>
+    <ul class="meny">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, quae asperiores! Natus veritatis voluptatibus doloremque vel voluptatum consectetur, ab asperiores possimus sint, consequatur omnis vitae aperiam modi reiciendis. Doloribus, laboriosam.</ul>
+
     </body>
 
 
