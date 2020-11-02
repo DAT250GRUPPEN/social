@@ -3,82 +3,179 @@
     <head>
         <meta charset="UTF-8">
         <title>Login/Register</title>
-        <link rel="stylesheet" href="/atsocial/static/login_style.css">
+        <!-- HVA SKJER HER??? HVORFOR VIL DEN IKKE TA CSS FILEN??
+        <link rel="stylesheet" href="/atsocial/static/login_style.css"> Hvorfor vil ikke denne bli plukket opp??-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    
-
+       
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
+    <style>
+        header{
+            background-color:#fcf5f0;
+            font-family: arial;
+            text-align: left;
+            margin: 100px;
+        }
+        body {
+            background-color:#fcf5f0;
+            font-family: arial;
+            text-align: left;
+            margin: 0px ;   
+        }
+        
+        h1 {color: #2e4153;}
+        h2 {color: #2e4153;}
+        p {color: #5D6D7E;}
+        ul {
+            color: #5D6D7E;
+            list-style-type: none;
+        }
+    </style>    
     </head>
-        
-        
+     <!--Nesten hele denne er bootstrap-->
+    
+    <header> <!-- Så teksten ikke er helt oppe-->
+    </header>
     <body>
         <ul>
-        <li><a>
-        <form> <!--Hva skal siden gjøre etter "submit"?-->
-            <h1>Log in</h1>
-            <h2>Please input E-mail and password:</h2>
-            <label for="emailtag">E-mail:</label>
-            <input id="emailtag" type="email" name="useremail" placeholder="Enter E-mail..."><br><br> <!--Det som tastes inn må inneholde en @-->
-            <label for ="passtag">Password:</label>
-            <input id="passtag" type="password" name="" placeholder="Enter password..."><br><br><!--pasordet blir skjult-->
-            <input type="submit" name="" value="submit">
+        <li>
+            <a>
+                <h2> @social </h2>
+        <form> <!--Hva skal siden gjøre etter "submit"?--> 
+                <!-- ha en egen klasse for form kanskje, slik at det går ann å flytte på den til høyre-->
+            
+                <div class="form-group row">
+                    <div class="col-md-6 mb-3">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label> 
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3"><!--Det som tastes inn må inneholde en @-->
+                  </div>
+                </div></div>
+                <div class="form-group row">
+                    <div class="col-md-6 mb-3">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3"><!--pasordet blir skjult/sladdet-->
+                  </div>
+                </div></div>
+                
+                <div class="form-group row">
+                    <div class="col-md-6 mb-3">
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gridCheck1">
+                      <label class="form-check-label" for="gridCheck1">
+                        Remember me
+                    </label>
+                    </div></div>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="register">Register</button>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                  </div>
+                </div>
+        </form> <!-- Login - siden er ferdig her-->
+
+
+
+
+        <form>
+            <!--Registrerings pop-upen starter her-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">First name</label>
+                            <input type="text" class="form-control" id="validationDefault01" placeholder="First name..." required>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault02">Last name</label>
+                            <input type="text" class="form-control" id="validationDefault02" placeholder="Last name..." required>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault03">E-mail</label>
+                            <input type="email" class="form-control" id="validationDefault03" placeholder="E-mail..." required>
+                          </div>
+
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationDefault04">Username</label>
+                                    <span class="input-group-text">@</span> <!-- Se her for ref/navn på meldinger -->
+                                    <input type="text" id="validationDefault04" class="form-control fix-rounded-right" placeholder="Username..." required>
+
+                            <div class="invalid-feedback">                          
+                              Please choose a username.
+                            </div></div>
+                          </div>
+                        </div>
+
+
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault05">Something about yourself</label>
+                            <input type="text" class="form-control" id="validationDefault05" placeholder="Write here..." required>
+                        </div>
+                        </div>
+
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationDefault04">Gender</label>
+                            <select class="custom-select" id="validationDefault04" required>
+                              <option selected disabled value="">...</option>
+                              <option value="female">Female</option>
+                              <option value="male">Male</option>
+                              <option value="notdefined">None or both of the above</option>
+                            </select>
+                            </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="inputPassword5">Password</label>
+                                <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+                                <small id="passwordHelpBlock" class="text-muted">
+                                Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                                </small>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                            <label class="form-check-label" for="invalidCheck2">
+                              I am over 18 years old
+                            </label>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+                </div>
+
+            </div>
+            </div>
+
+
         </form>
-        </a></li>
-    </ul>
-
-
-
-    <ul>
-        <li> 
-            <form>
-                <h2>Register <br></h2>
-
-                <label for="nametag">Firstname:</label>
-                <input id="nametag" type="firstname" name="username" placeholder="Firstname"> <!--Det som tastes inn må inneholde en @-->
-                <br><br>          
-                <label for="surnametag">Surname:</label>
-                <input id="surnametag" type="surname" name="usersurname" placeholder="Surname"> <!--Det som tastes inn må inneholde en @-->
-                <br><br>
-                <label for="emailtag">E-mail:</label>
-                <input id="emailtag" type="email" name="useremail" placeholder="E-mail"> <!--Det som tastes inn må inneholde en @-->
-                <br><br>
-                <p>Age group:</p> <!--kanskej legge inn en kalender-funskjon for å legge inn fødselsdato-->
-                <select name="age">
-                <option value="18-24">18-24</option>
-                <option value="25-34">25-34</option>
-                <option value="25-34">35-44</option>
-                <option value="25-34">45-100</option>
-                </select>
-                <br><br>
-                <p>Gender: </p>
-                <ul>
-                    <label for="female">Female:</label>
-                    <input type="radio" id="female" type="gender" name="usergender" value="female"> <!--Det som tastes inn må inneholde en @-->
-                    <label for="male"> Male:</label>
-                    <input type="radio" id="male" type="gender" name="usergender" value="male"><!--Det som tastes inn må inneholde en @-->
-                    <label for="notdefined">Not defined by the above:</label>
-                    <input type="radio" id="notdefined" type="gender" name="usergender" value="notdefined"> <!--Det som tastes inn må inneholde en @-->
-                </ul><br>
-                <label for="usertext"><p>About yourself:</p></label>
-                <textarea name="name" id="usertext" cols="50" rows="3" placeholder="Something about yourself..."></textarea>
-                <br><br>
-                <label for="newpasswordtag">New password:</label>
-                <input id="newpasswordtag" type="newpassword" name="usernewpassword" placeholder="New password"> <!--Det som tastes inn må inneholde en @-->
-                <br><br>
-                <label for="confirmpasswordtag">Confirm new password:</label>
-                <input id="confirmpasswordtag" type="confirmpassword" name="userconfirmpassword" placeholder="Confirm password"> <!--Det som tastes inn må inneholde en @-->
-                <br><br><br>
-                <input type="submit" name="" value="Register">
-            </form>
+        </a>
         </li>
-    </ul>    
+        </ul>
+
     </body>
-   
-  
-
-
-        
-        
 </html>    
