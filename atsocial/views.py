@@ -21,8 +21,8 @@ def index():
 def page(page_id):
     return render_template('page.html', page=pages[page_id - 1])
 
-@app.route('/ekstrapage/<int:ekstrapage_id>')
-def ekstrapage(ekstrapage_id):
-    return render_template('ekstrapage.html', ekstrapage=ekstrapages[ekstrapage_id - 1])
+@app.route('/login')
+def login():
+    return render_template('login.html', login=login)
 
 

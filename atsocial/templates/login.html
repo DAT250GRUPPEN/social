@@ -3,10 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Login/Register</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- HVA SKJER HER??? HVORFOR VIL DEN IKKE TA CSS FILEN??
         <link rel="stylesheet" href="/atsocial/static/login_style.css"> Hvorfor vil ikke denne bli plukket opp??-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-       
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<!-- setningen over er bare for å få fram det lille bildet av planeten.-->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
@@ -15,52 +21,92 @@
             background-color:#fcf5f0;
             font-family: arial;
             text-align: left;
-            margin: 100px;
+            margin: 0px;
         }
         body {
-            background-color: white;
+            background-color: #fcf5f0;
             font-family: arial;
             text-align: left;
             margin: 0px ;   
         }
-        .colorclass {
-            background-color:#fcf5f0;
-            font-family: arial;
-            text-align: left;
+        .jumbotron {
+            background-color: #fcf5f0;
+            color: #5D6D7E;
+            padding: 100px 25px;
+            font-family: Montserrat, sans-serif;
+            }
+        .container-fluid {
+            padding: 40px 50px;
+            }   
+        .bg-white {
+            background-color:white;
         }
         
         h1 {color: #2e4153;}
         h2 {color: #2e4153;}
         p {color: #5D6D7E;}
-        ul {
+
+        .logo {
             color: #5D6D7E;
-            list-style-type: none;
-        }
-    </style>    
-    </head>
-     <!--bootstrap-->
+            font-size: 200px;
+            background-color: white;
+            border-radius: 100%;
+         
+            }
     
-    <header> <!-- Så teksten ikke er helt oppe-->
+/*       TROR IKKE VI TRENGER DENNE
+        .slideanim {visibility:hidden;}
+        .slide {
+        animation-name: slide;
+        -webkit-animation-name: slide;
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        visibility: visible;
+        }
+*/
+        @media screen and (max-width: 480px) {
+        .logo {
+            font-size: 150px;
+            }
+        }
+
+    </style>    
     </header>
     <body>
-        <ul><li> 
-            <a>
         <form> <!--Hva skal siden gjøre etter "submit"?--> 
                 <!-- ha en egen klasse for form kanskje, slik at det går ann å flytte på den til høyre-->
-                <div class="container"><div class="jumbotron">
-                        <div class="form-group row">
-                            <div class="col-md-6 mb-3">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label> 
-                        <div class="col-sm-10">
+               
+                <div class="container-fluid"> <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-sm-8">
+                          <h2>Welcome to @social!</h2><br>
+                          </div>
+                      </div>
+
+                    <div class="column">
+
+                    <div class="col-sm-4">
+                        <span class="fa fa-at logo"></span><!--<span class="glyphicon glyphicon-globe logo slideanim"></span>  TROR IKKE VI TRENGER SLIDEANIM-->
+                    </div></div>    
+
+                    <div class="column">
+
+                    <div class="form-group row">
+                        <div class="col-md-6 mb-3">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label> 
+                            <div class="col-sm-10">
                             <input type="email" class="form-control" id="inputEmail3"><!--Det som tastes inn må inneholde en @-->
-                        </div></div></div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="form-group row">
                             <div class="col-md-6 mb-3">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword3"><!--pasordet blir skjult/sladdet-->
-                        </div></div>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword3"><!--pasordet blir skjult/sladdet-->
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="form-group row">
@@ -84,8 +130,10 @@
                             <button type="submit" class="btn btn-primary">Sign in</button>
                         </div>
                     </div>
-                </div>
-            </div>  
+                </div></div></div>
+
+
+           </div></div></div>     
         </form> <!-- Login - siden er ferdig her-->
 
 
@@ -186,7 +234,5 @@
             </div>
             </div>
         </form>
-        </a>
-        </li></ul>
     </body>
 </html>    
