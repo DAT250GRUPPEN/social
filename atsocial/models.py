@@ -1,7 +1,7 @@
 from atsocial import db,login_manager
-from datetime import datetime
-from werkzeug.security import generate_password_hash,check_password_hash
-from flask_login import UserMixin
+from datetime import datetime #pip install datetime
+from werkzeug.security import generate_password_hash,check_password_hash #pip install werkzeug
+from flask_login import UserMixin #pip install flask_login
 # By inheriting the UserMixin we get access to a lot of built-in attributes
 # which we will be able to call in our views!
 # is_authenticated()
