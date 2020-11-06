@@ -27,8 +27,12 @@ def index():
 @app.route('/page/<int:page_id>')
 def page(page_id):
     return render_template('page.html', page=pages[page_id - 1])
+# Kan mend fordel donbbeltsjekkes med "flask routing exercise" - filmen.
 
 
 @app.route('user/<username>') # Husk at id-en for input username i registreringen heter "username"
-def username(user_id):
-    return 
+def username(imputusername):
+    inputusername = ""
+
+    for inputusername
+    
