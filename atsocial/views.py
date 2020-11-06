@@ -13,7 +13,7 @@ ekstrapages = [{'id': 1, 'title':'Settings', 'figure_name':'fa fa-cogs'},\
 
 # dictionary
 
-@app.route('/')
+@app.route('/')  # Dette er localhost:5000
 def index():
     return render_template('index.html', pages=pages) 
 
@@ -23,6 +23,6 @@ def page(page_id):
 
 @app.route('/login')
 def login():
-    return render_template('login.html', login=login)
+    return "<h1> login siden! </h1>"
 
 
