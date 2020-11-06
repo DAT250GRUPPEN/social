@@ -29,4 +29,6 @@ def page(page_id):
     return render_template('page.html', page=pages[page_id - 1])
 
 
-
+@app.route('user/<username>') # Husk at id-en for input username i registreringen heter "username"
+def username(user_id):
+    return 
