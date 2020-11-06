@@ -1,5 +1,5 @@
 import datetime
-from flask import render_template
+from flask import render_template, Blueprint
 from atsocial import app
 
 pages = [{'id': 1, 'title': 'Home','figure_name':'fa fa-home'},\
@@ -12,6 +12,7 @@ ekstrapages = [{'id': 1, 'title':'Settings', 'figure_name':'fa fa-cogs'},\
         {'id': 3, 'title':'Log Out', 'figure_name':'fa fa-lock'}]
 
 # dictionary
+views = Blueprint("views",__name__)
 
 @app.route('/')
 def index():
