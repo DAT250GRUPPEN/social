@@ -7,25 +7,32 @@ pages = [{'id': 1, 'title': 'Home','figure_name':'fa fa-home'},\
         {'id':3, 'title':'Friends', 'figure_name': 'fa fa-users'},\
         {'id':4, 'title': 'Myprofile','figure_name': 'fa fa-id-badge'}]
 
-ekstrapages = [{'id': 1, 'title':'Settings', 'figure_name':'fa fa-cogs'},\
-        {'id':2, 'title':'Help/FAQ', 'figure_name':'fa fa-question-circle-o'},\
-        {'id': 3, 'title':'Log Out', 'figure_name':'fa fa-lock'}]
+#ekstrapages = [{'id': 1, 'title':'Settings', 'figure_name':'fa fa-cogs'},\
+#        {'id':2, 'title':'Help/FAQ', 'figure_name':'fa fa-question-circle-o'},\
+#        {'id': 3, 'title':'Log Out', 'figure_name':'fa fa-lock'}]
 
-# dictionary
+userspages = [{'id': 1, 'title':'test_user_en', 'figure_name':'fa fa-cogs'},\
+              {'id': 2, 'title':'test_user_to', 'figure_name':'fa fa-question-circle-o'},\
+              {'id': 3, 'title':'teskt_user_tre', 'figure_name':'fa fa-lock'}]
+
+
+
 views = Blueprint("views",__name__)
 
 @app.route('/')  # Dette er localhost:5000
 def login():
-    return render_template('login.html', pages=pages) 
+    return render_template('login.html') 
 
 @app.route('/index')
 def index():
     return render_template('index.html', pages=pages) 
 
-
-
 @app.route('/page/<int:page_id>')
 def page(page_id):
     return render_template('page.html', page=pages[page_id - 1])
-# Kan mend fordel donbbeltsjekkes med "flask routing exercise" - filmen.
+# Kan mend fordel dobbeltsjekkes med "flask routing exercise" - filmen.
 
+    
+@app.route('/users/<int:userspages_id>') # Husk at id-en for input username i registreringen heter "username"
+def username(userspages_id):
+    return render_template('users.html', page = userspages[userspages_id - 1])
