@@ -30,9 +30,15 @@ def page(page_id):
 # Kan mend fordel donbbeltsjekkes med "flask routing exercise" - filmen.
 
 
+<<<<<<< HEAD
 @app.route('user/<username>') # Husk at id-en for input username i registreringen heter "username"
 def username(imputusername):
     inputusername = ""
 
     for inputusername
     
+=======
+#@app.route('user/<username>') # Husk at id-en for input username i registreringen heter "username"
+#def username(user_id):
+ #   return 
+>>>>>>> 0027e2529084802765c672beb1c9397d8d8acaab
