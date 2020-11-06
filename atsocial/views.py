@@ -14,16 +14,19 @@ ekstrapages = [{'id': 1, 'title':'Settings', 'figure_name':'fa fa-cogs'},\
 # dictionary
 views = Blueprint("views",__name__)
 
-@app.route('/')
+@app.route('/')  # Dette er localhost:5000
+def login():
+    return render_template('login.html', pages=pages) 
+
+@app.route('/index')
 def index():
     return render_template('index.html', pages=pages) 
+
+
 
 @app.route('/page/<int:page_id>')
 def page(page_id):
     return render_template('page.html', page=pages[page_id - 1])
 
-@app.route('/login')
-def login():
-    return render_template('login.html', login=login)
 
 
