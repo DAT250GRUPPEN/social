@@ -16,7 +16,6 @@ userspages = [{'id': 1, 'title':'test_user_en', 'figure_name':'fa fa-cogs'},\
               {'id': 3, 'title':'teskt_user_tre', 'figure_name':'fa fa-lock'}]
 
 
-
 views = Blueprint("views",__name__)
 
 @app.route('/')  # Dette er localhost:5000
@@ -31,8 +30,10 @@ def index():
 def page(page_id):
     return render_template('page.html', page=pages[page_id - 1])
 # Kan mend fordel dobbeltsjekkes med "flask routing exercise" - filmen.
+# de ovenfor er til hovedmenyen
 
     
 @app.route('/users/<int:userspages_id>') # Husk at id-en for input username i registreringen heter "username"
 def username(userspages_id):
-    return render_template('users.html', page = userspages[userspages_id - 1])
+    return render_template('users.html', usernumber = userspages[userspages_id - 1])
+
