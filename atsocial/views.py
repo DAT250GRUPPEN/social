@@ -23,7 +23,7 @@ def login():
     return render_template('login.html') 
 
 @app.route('/index')
-def index():
+def index():            # pages kunne ha hettet noe annet og att lik pages: side=pages
     return render_template('index.html', pages=pages) 
 
 @app.route('/page/<int:page_id>')
@@ -36,4 +36,5 @@ def page(page_id):
 @app.route('/users/<int:userspages_id>') # Husk at id-en for input username i registreringen heter "username"
 def username(userspages_id):
     return render_template('users.html', usernumber = userspages[userspages_id - 1])
+    
 
