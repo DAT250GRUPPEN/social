@@ -90,16 +90,16 @@
                         <div class="col-md-12 mb-3">
                             <label for="inputEmail3" class="col-sm col-form-label"> Email </label> 
                             <div class="col-sm-10">
-                            <input type="email" class="form-control" id="inputEmail3"><!--Det som tastes inn må inneholde en @-->
+                            <input type="email" class="form-control" id="inputEmail3" required><!--Det som tastes inn må inneholde en @-->
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group row">
                             <div class="col-md-12 mb-3">
-                        <label for="inputPassword3" class="col-sm col-form-label">Password</label>
+                        <label for="inputPassword" class="col-sm col-form-label">Password</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3"><!--pasordet blir skjult/sladdet-->
+                                <input type="password" class="form-control" id="inputPassword" required><!--pasordet blir skjult/sladdet-->    
                             </div>
                         </div>
                     </div>
@@ -243,6 +243,9 @@
             <div class="col-md-6 mb-3">
                 <label for="loginvalidation01">Du er logget inn!</label>
                 </div>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary" href="index" role="button">Ok!</a>
             </div>
         <div class="modal_footer">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
