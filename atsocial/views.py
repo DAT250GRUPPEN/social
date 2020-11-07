@@ -28,9 +28,11 @@ def index():            # pages kunne ha hettet noe annet og att lik pages: side
 
 @app.route('/page/<int:page_id>') # Hovedmenyen
 def page(page_id):
-    return render_template('page.html', page=pages[page_id - 1])
+    if pages[page_id - 1] == 0:
+        return render_template('index.html', pages = pages) 
+    else:
+        return render_template('page.html', page=pages[page_id - 1])
 # Kan mend fordel dobbeltsjekkes med "flask routing exercise" - filmen.
-
 
     
 @app.route('/users/<int:userspages_id>') # Husk at id-en for input username i registreringen heter "username"
