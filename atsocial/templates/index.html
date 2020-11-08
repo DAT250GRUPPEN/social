@@ -13,16 +13,21 @@
     <!-- Her er hovedmeny-->
     {% for page in pages %}
     <li> 
-        <a href={{url_for("page", page_id=page.id )}}> 
-        <div class="tooltip"><i class= '{{page.figure_name }}'></i>
-        <span class="tooltiptext">{{page.title}}</span>
-        </div>
-        {% if page.id == 1 %}
-        <a class="active"></a>
-        {% endif %}
-        1 <!-- Disse er kun markeringer for egen del-->
-        </a>
         
+        
+
+        <a href={{url_for("page", page_id=page.id )}}> 
+
+        <div class="tooltip"><i class= '{{page.figure_name }}'></i>
+        
+        <span class="tooltiptext">{{page.title}}</span>
+        </div></a>
+            <!--
+            {% if page.id == 0 %}
+            <a class="active"></a>
+            {% endif %}
+            vurderer å fjerne denne...
+            -->
     {% endfor %}  
 
 
@@ -36,7 +41,6 @@
         <i class="fa fa-cogs"></i> Settings</a>
         <a href="ekstrapage.html"><i class="fa fa-question-circle-o"></i> Help/FAQ</a>
         <a href="ekstrapage.html"><i class="fa fa-lock"></i> Log Out</a>
-        2 <!-- Disse er kun markeringer for egen del-->
         </div> 
         </li>
     <!---->
@@ -48,7 +52,7 @@
         <form action="/action_page.php" method="GET">
         <label for="searchword"></label>
         <input id="searchword" type="text" name="search" placeholder="Search..." >
-        <button type="submit"><i class="fa fa-search"></i></button>3 <!-- Disse er kun markeringer for egen del-->
+        <button type="submit"><i class="fa fa-search"></i></button>
         </li></form>          
     </li>
 </ul>
@@ -57,15 +61,23 @@
 
 
 {% block content %}
-<p> Her er innholdet egentlig <br> Men velger å koble til login siden her for å se den</p>
-<a href="/atsocial/templates/login.html" > klikk her</a>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem odio quaerat temporibus fugiat laborum facilis suscipit inventore, sit dolorem consectetur, qui a aut ea minus nulla deserunt atque autem porro.
+<p> Her er innholdet egentlig <br> 
+Lorem, ipsum dolor sit <br>amet consectetur adipisicing elit. <br>Voluptatem odio quaerat <br>temporibus fugiat laborum facilis suscipit inventore,<br> sit dolorem consectetur, qui a aut ea minus nulla <br>deserunt atque autem porro.
 <br>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quod magnam autem voluptate expedita eligendi eveniet repellendus maxime! Illo sit sint id qui repudiandae architecto dolores quos, consectetur eaque non.
+Lorem ipsum dolor sit <br>amet consectetur adipisicing elit.<br> Doloribus quod magnam autem <br>voluptate expedita eligendi eveniet repellendus maxime! Illo <br>sit sint id qui repudiandae architecto dolores quos,<br> consectetur eaque non.
 <br>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis veritatis corporis ad nobis assumenda voluptatibus nisi sint blanditiis molestias tenetur alias sequi animi necessitatibus vero earum, nesciunt fuga iusto ex.
-
+Lorem ipsum dolor sit <br>amet consectetur adipisicing elit. Perferendis <br>veritatis corporis ad nobis <br>assumenda voluptatibus nisi sint blanditiis molestias tenetur <br>alias sequi animi necessitatibus vero earum, n<br>esciunt fuga iusto ex.
 </p>
+Lorem ipsum <br>dolor sit amet consectetur adipisicing elit. Placeat,<br> exercitationem odio accusantium cumque expedita cum ut<br> illo saepe totam accusamus commodi numquam<br> omnis ullam eius corporis repudiandae,<br> rem excepturi distinctio.
+<br>
+Lorem ipsum dolor sit amet consectetur <br>adipisicing elit. Libero, totam itaque q<br>
+
+<br><br><br><br><br>uae deleniti eveniet mollitia rerum consectetur quasi <br>expedita illo in tenetur<br> porro? Modi in laboriosam <br>facilis culpa nemo quod!
+<br><br><br><br>
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur nihil quasi quaerat corporis, culpa dolorum quos aut! Saepe voluptate reprehenderit consectetur. In recusandae sint eveniet voluptatum a! Consequuntur, adipisci voluptates!
+
+
+
 {% endblock content %}
 
 

@@ -69,6 +69,11 @@
         }
     </style>    
 <!--css er ferdig her-->
+<!--css er ferdig her-->
+
+
+
+
 </head>
 
     <body>
@@ -85,21 +90,21 @@
                         <span class="fa fa-at logo"></span><!--<span class="glyphicon glyphicon-globe logo slideanim"></span>  TROR IKKE VI TRENGER SLIDEANIM-->
                     </div>   
 
-            <form> <!--Hva skal siden gjøre etter "submit"?--> 
+            <form aria-hidden="true"> <!--Hva skal siden gjøre etter "submit"?--> 
                     <div class="form-group row">
                         <div class="col-md-12 mb-3">
                             <label for="inputEmail3" class="col-sm col-form-label"> Email </label> 
                             <div class="col-sm-10">
-                            <input type="email" class="form-control" id="inputEmail3"><!--Det som tastes inn må inneholde en @-->
+                            <input type="email" class="form-control" id="inputEmail3" required><!--Det som tastes inn må inneholde en @-->
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group row">
                             <div class="col-md-12 mb-3">
-                        <label for="inputPassword3" class="col-sm col-form-label">Password</label>
+                        <label for="inputPassword" class="col-sm col-form-label">Password</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3"><!--pasordet blir skjult/sladdet-->
+                                <input type="password" class="form-control" id="inputPassword" required><!--pasordet blir skjult/sladdet-->    
                             </div>
                         </div>
                     </div>
@@ -122,11 +127,15 @@
                                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="register">Register</button> -->
                                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="register">Register</button>
                                 <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#duerloggetinn" >Sign in</button>
+                                
+                                
+                                    
                             </div>
                         </div></div></div>
                     </div>
                 </div>
             </div>
+    <!--            Login-siden er ferdig her           -->
     <!--            Login-siden er ferdig her           -->
 
 
@@ -135,7 +144,7 @@
 
 
 
-
+<!--           REGISTRERING STARTER HER                                      -->
 <!--           REGISTRERING STARTER HER                                      -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -221,18 +230,25 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>           
+                    <a class="btn btn-primary" href="/" role="button">Submit</a>
+                    <!-- HER MÅ INFO FRA REGISTRERINGEN LEGGES TIL I DATABASEN-->       
                 </div>
 
             </div>
             </div>
             </div>
 <!--        REGISTRERING SLUTTER HER        -->
+<!--        REGISTRERING SLUTTER HER        -->
 
 
 
 
-<!--       DENNE ER BARE FOR AT LOGINKNAPPEN SKAL GJØRE NOE, ALT DETTE INNI HER KAN SLETTES ETTERHVERT      -->                 
+
+
+
+
+<!--       DENNE ER BARE FOR AT LOGIN-KNAPPEN SKAL GJØRE NOE, HER MÅ VI SETTE PÅ NOE SIKKERHET...     -->                 
+<!--       DENNE ER BARE FOR AT LOGIN-KNAPPEN SKAL GJØRE NOE, HER MÅ VI SETTE PÅ NOE SIKKERHET...     -->                 
 <div class="modal fade" id="duerloggetinn" tabindex="0" aria-labelledby="duerloggetinnLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -244,13 +260,17 @@
                 <label for="loginvalidation01">Du er logget inn!</label>
                 </div>
             </div>
+            <div class="col">
+                <a class="btn btn-primary" href="index" role="button">Ok!</a>
+            </div>
         <div class="modal_footer">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button><br>
         </div>
-    <!--       OG HER SLUTTER DEN "UNØDVENDIGE" KODEN SOM BARE ER FOR SHOW      -->                 
-    
+    <!--       OG HER SLUTTER DEN "UNØDVENDIGE" KODEN SOM BARE ER FOR SHOW , HER MÅ VI SETTE PÅ NOE SIKKERHET...       -->                 
+    <!--       OG HER SLUTTER DEN "UNØDVENDIGE" KODEN SOM BARE ER FOR SHOW , HER MÅ VI SETTE PÅ NOE SIKKERHET...       -->                 
+
     
 
 
