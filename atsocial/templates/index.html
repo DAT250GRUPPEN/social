@@ -13,8 +13,6 @@
     <!-- Her er hovedmeny-->
     {% for page in pages %}
     <li> 
-        
-        
 
         <a href={{url_for("page", page_id=page.id )}}> 
 
@@ -32,28 +30,28 @@
 
 
     
-    <!-- Her er dropdown meny-->
-    <li class="dropdown" style="float:right;"> <!--settes til høyre-->
-        <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-bars"></i></a>
-        <div class="dropdown-content">
-        <a href=("ekstrapage", ekstrapage_id = ekstrapage.id >
+        <!-- Her er dropdown meny-->
+        <li class="dropdown" style="float:right;"> <!--settes til høyre-->
+            <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-bars"></i></a>
+            <div class="dropdown-content">
+            <a href=("ekstrapage", ekstrapage_id = ekstrapage.id >
 
-        <i class="fa fa-cogs"></i> Settings</a>
-        <a href="ekstrapage.html"><i class="fa fa-question-circle-o"></i> Help/FAQ</a>
-        <a href="ekstrapage.html"><i class="fa fa-lock"></i> Log Out</a>
-        </div> 
-        </li>
-    <!---->
+            <i class="fa fa-cogs"></i> Settings</a>
+            <a href="ekstrapage.html"><i class="fa fa-question-circle-o"></i> Help/FAQ</a>
+            <a href="ekstrapage.html"><i class="fa fa-lock"></i> Log Out</a>
+            </div> 
+            </li>
+        <!---->
 
 
 
-<!-- Her er søkefeltet-->
-    <li class ="search-container">
-        <form action="/action_page.php" method="GET">
-        <label for="searchword"></label>
-        <input id="searchword" type="text" name="search" placeholder="Search..." >
-        <button type="submit"><i class="fa fa-search"></i></button>
-        </li></form>          
+        <!-- Her er søkefeltet-->
+        <li class ="search-container">
+            <form action="/action_page.php" method="GET">
+            <label for="searchword"></label>
+            <input id="searchword" type="text" name="search" placeholder="Search..." >
+            <button type="submit"><i class="fa fa-search"></i></button>
+            </li></form>          
     </li>
 </ul>
 {% endblock meny %}
