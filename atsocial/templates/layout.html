@@ -30,32 +30,62 @@
 
     <body>
         <ul class="meny"> <!--Bruker bare list of links til navbar, meny knappene innhold hver for seg-->
+
             <!-- Her er hovedmeny-->
+            <!-- Her er hovedmeny-->
+
+
+
+            <li><a class="active" href="index">
+                <div class="tooltip"><i class="fa fa-home"></i>
+                <span class="tooltiptext">HOME</span>
+                </div></a></li>
+            <li><a href="upload">
+                <div class="tooltip"><i class="fa fa-cloud-upload"></i><span class="tooltiptext">UPLOAD</span>
+                </div></a></li>
+            <li><a href="friends">
+                <div class="tooltip"><i class="fa fa-users"></i><span class="tooltiptext">FRIENDS</span>
+                </div></a></li>
+            <li><a href="myprofile">
+                <div class="tooltip"><i class="fa fa-id-badge"></i><span class="tooltiptext">MY PROFILE</span>
+                </div></a></li>
+
+
+
+
+        
+<!--
+
             {% for page in pages %}
-            <li> 
+            <li>
                 <a href={{url_for("page", page_id=page.id )}}> 
                 <div class="tooltip"><i class= '{{page.figure_name }}'></i>
                 <span class="tooltiptext">{{page.title}}</span>
                 </div></a>
-                    <!--
+                    
                     {% if page.id == 0 %}
                     <a class="active"></a>
                     {% endif %}
                     vurderer å fjerne denne... er strek under ikonet til den aktive siden.
                     -->
-            {% endfor %} 
-            <!-- Her er hovedmeny ferdig-->
-        
+            <!--{% endfor %} -->
+            <!-- Hovedmeny ferdig-->
+            <!-- Hovedmeny ferdig-->
+
+
+
+
+
+
+
         
             <!-- Her er dropdown meny -->
                 <li class="dropdown" style="float:right;"> <!--settes til høyre-->
                     <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-bars"></i></a>
                     <div class="dropdown-content">
-                    <a href=("ekstrapage", ekstrapage_id = ekstrapage.id >
-        
-                    <i class="fa fa-cogs"></i> Settings</a>
-                    <a href="ekstrapage.html"><i class="fa fa-question-circle-o"></i> Help/FAQ</a>
-                    <a href="ekstrapage.html"><i class="fa fa-lock"></i> Log Out</a>
+                    <a href="settings"><i class="fa fa-cogs"></i> Settings</a>
+                    <a href="help_faq"><i class="fa fa-question-circle-o"></i> Help/FAQ</a>
+                    <a href="logout"><i class="fa fa-lock"></i> Log Out</a>
                     </div> 
                     </li>
             <!-- Her er dropdown meny ferdig -->
