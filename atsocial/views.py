@@ -26,11 +26,22 @@ def login():
 def index():            # pages kunne ha hettet noe annet og att lik pages: side=pages
     return render_template('index.html', pages=pages) 
 
-@app.route('/page/<int:page_id>') # Hovedmenyen
-def page(page_id):
-        return render_template('page.html', page=pages[page_id -1])
+#@app.route('/page/<int:page_id>') # Hovedmenyen
+#def page(page_id):
+#        return render_template('page.html', page=pages[page_id -1])
 # Kan mend fordel dobbeltsjekkes med "flask routing exercise" - filmen.
 
+@app.route('/myprofile')  # Dette er localhost:5000
+def profile():
+    return render_template('myprofile.html') 
+
+@app.route('/myfriends')  # Dette er localhost:5000
+def friends():
+    return render_template('myfriends.html') 
+
+@app.route('/upload')  # Dette er localhost:5000
+def uploads():
+    return render_template('upload.html') 
     
 @app.route('/users/<int:userspages_id>') # Husk at id-en for input username i registreringen heter "username"
 def username(userspages_id):
