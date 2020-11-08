@@ -1,24 +1,23 @@
 
+
+
+ 
+
 {% extends 'layout.html' %}
-
-
 
 <!-- under her er navnet på menysiden i taben-->
 {% block title %}
-{{page.title}}
+- Myprofile
 {% endblock title %}
 
+{% block myprofileactive %}
+    class="active" 
+{% endblock myprofileactive %}
 
-
-
-<p>hei</p>
-<h1>hallo</h1>
-
-
+    
 <!-- Dette er når en går inn i siden -->
 {% block content%}
-<h1>{{page.title}} lala</h1>    
-<p>{{page.text}}</p>
+
 <p> Her kommer innholdet til de forskjellige sidene</p>
 {% endblock content %}
 
