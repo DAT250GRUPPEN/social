@@ -19,10 +19,11 @@ def load_user(user_id):
 
 class User(db.Model, UserMixin):
 
-    # Create a table in the db
+    #Making a table name manually
     __tablename__ = 'users'
 
-    id = db.Column(db.Integer, primary_key = True)
+    #Creating columns in the db
+    id = db.Column(db.Integer, primary_key = True) #Unique id to each user 
     profile_image = db.Column(db.String(20), nullable=False, default='default_profile.png')
     email = db.Column(db.String(64), unique=True, index=True)
     username = db.Column(db.String(64), unique=True, index=True)
@@ -30,7 +31,7 @@ class User(db.Model, UserMixin):
     # This connects Posts to a User Author.
     posts = db.relationship('Post', backref='author', lazy=True)
 
-    def __init__(self, email, username, password):
+    def __init__(self, email, username, password): 
         self.email = email
         self.username = username
         self.password_hash = generate_password_hash(password)
@@ -47,7 +48,7 @@ class Post(db.Model):
     users = db.relationship(User)
 
     # Model for the Posts on Website
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True) 
     # Notice how we connect the Post to a particular author
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
