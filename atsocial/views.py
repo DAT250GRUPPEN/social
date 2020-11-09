@@ -15,8 +15,13 @@ userspages = [{'id': 1, 'name':'test_user_en', 'password':'1234'},\
               {'id': 2, 'name':'test_user_to', 'password':'3456'},\
               {'id': 3, 'name':'teskt_user_tre', 'password':'6789'}]
 
+mainuser = [{'id': 1, 'first':'ola', 'last':'nordmann', 'email':'olanordmann@olanordmann','password':'1234'}]
+
 
 views = Blueprint("views",__name__)
+
+
+
 
 @app.route('/')  # Dette er localhost:5000
 def login():
@@ -31,15 +36,26 @@ def index():            # pages kunne ha hettet noe annet og att lik pages: side
 #        return render_template('page.html', page=pages[page_id -1])
 # Kan mend fordel dobbeltsjekkes med "flask routing exercise" - filmen.
 
-@app.route('/myprofile')  # Dette er localhost:5000
-def profile():
+
+
+
+@app.route('/myprofile')  
+def myprofile():
     return render_template('myprofile.html') 
 
-@app.route('/myfriends')  # Dette er localhost:5000
+
+
+
+
+
+
+
+
+@app.route('/myfriends')  
 def friends():
     return render_template('myfriends.html') 
 
-@app.route('/upload')  # Dette er localhost:5000
+@app.route('/upload') 
 def uploads():
     return render_template('upload.html') 
     

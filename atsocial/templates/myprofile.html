@@ -17,8 +17,13 @@
     
 <!-- Dette er når en går inn i siden -->
 {% block content%}
+<div class="jumbotron">
+<p>Velkommen til siden din!</p>
+<p>Hva heter du?</p>
+ <a href="{{url_for('login')}}"> registrer til siden din her</a>
 
-<p> Her kommer innholdet til de forskjellige sidene</p>
+</div>
 {% endblock content %}
 
 <!-- Dette er hva som skjer per side man klikker seg inn på fra hovedmenyen -->
+<!-- <h1> {{main_user.name|capitalize}} {{name}}</h1> -->

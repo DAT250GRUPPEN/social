@@ -16,8 +16,6 @@
         <meta name="keywords" content="feed, HTML, CSS">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  
         <!--denne får den til å tilpasse seg forskjellige skjermer-->   
-        
-        
         <style></style>
     </head>
 
@@ -34,8 +32,6 @@
 
             <!-- Her er hovedmeny-->
             <!-- Her er hovedmeny-->
-
-
 
             <li><a 
             {% block homeactive %}  
@@ -59,7 +55,7 @@
             <li><a 
                 {% block myprofileactive %}
                 {% endblock myprofileactive %}
-                href="myprofile">
+                href="{{url_for('myprofile')}}">
                 <div class="tooltip"><i class="fa fa-id-badge"></i><span class="tooltiptext">MY PROFILE</span>
                 </div></a></li>
 
@@ -69,8 +65,6 @@
   
             <!-- Hovedmeny ferdig-->
             <!-- Hovedmeny ferdig-->
-
-
 
 
 
