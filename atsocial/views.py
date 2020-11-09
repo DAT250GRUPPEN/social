@@ -27,6 +27,10 @@ views = Blueprint("views",__name__)
 def login():
     return render_template('login.html') 
 
+@app.route('/registration')  # Dette er localhost:5000
+def reg():
+    return render_template('registration.html') 
+
 @app.route('/index')
 def index():            # pages kunne ha hettet noe annet og att lik pages: side=pages
     return render_template('index.html', pages=pages) 

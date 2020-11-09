@@ -1,0 +1,86 @@
+{% extends 'login.html' %}
+
+
+
+
+    {% block registrering %}
+
+
+                <form> <!-- FORM starter --> <!-- FORM starter --> <!-- FORM starter -->
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="first">First name</label>
+                                <input type="text" class="form-control" id="first" placeholder="First name..." required>
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
+                            <label for="last">Last name</label>
+                                <input type="text" class="form-control" id="last" placeholder="Last name..." required>
+                        </div>
+
+
+                        <div class="col-md-12 mb-3">
+                            <label for="validationDefault03">E-mail</label>
+                                <input type="email" class="form-control" id="validationDefault03" placeholder="E-mail..." required>
+                        </div> 
+                     <!-- <--- USIKKER PÅ OM DENNE SKULLE LUKKES HER...   --> 
+
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <div class="container">
+                                    <div class="row">
+                                        <label for="username">Username </label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm1 mb-3 ">
+                                            <span class="input-group-text">@</span> <!-- Se her for ref/navn på meldinger -->
+                                        </div>
+                                        <div class="col-sm1">
+                                            <input type="text" id="username" class="form-control fix-rounded-right" placeholder="Username..." required>
+                                        </div>
+                                        <div class="invalid-feedback">Please choose a username.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="validationDefault04"><br> Gender</label>
+                                    <select class="custom-select" id="validationDefault04" required>
+                                        <option selected disabled value="">...</option>
+                                        <option value="female">Female</option>
+                                        <option value="male">Male</option>
+                                        <option value="notdefined">None or both of the above</option>
+                                    </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+                            <label for="validationDefault05"> Something about yourself</label>
+                                <input type="text" class="form-control" id="validationDefault05" placeholder="Write here..." required>
+                        </div>
+                                            
+                                            
+                        <div class="col-md-12 mb-3">
+                            <label for="inputPassword5">Password</label>
+                                <input type="password" id="inputPassword5" class="form-control " aria-describedby="passwordHelpBlock" required>
+                                <small id="passwordHelpBlock" class="text-muted">
+                                Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                                </small>
+                        </div>                   
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                    <label class="form-check-label" for="invalidCheck2">
+                                        I am over 18 years old
+                                    </label>
+                            </div></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+      
+    {% endblock registrering %}
