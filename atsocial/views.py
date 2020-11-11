@@ -1,5 +1,5 @@
 import datetime
-from flask import render_template, Blueprint
+from flask import Flask, render_template, Blueprint, request
 from atsocial import app
 #{'id': , 'title': 'Home','figure_name':'fa fa-home'},\
         
@@ -27,9 +27,7 @@ views = Blueprint("views",__name__)
 def login():
     return render_template('login.html') 
 
-@app.route('/registration')  # Dette er localhost:5000
-def reg():
-    return render_template('registration.html') 
+
 
 @app.route('/index')
 def index():            # pages kunne ha hettet noe annet og att lik pages: side=pages
@@ -42,14 +40,19 @@ def index():            # pages kunne ha hettet noe annet og att lik pages: side
 
 
 
-
 @app.route('/myprofile')  
 def myprofile():
     return render_template('myprofile.html') 
 
+@app.route('/registration')  # Dette er localhost:5000
+def reg():
+    return render_template('registration.html') 
 
-
-
+@app.route('/thank_you')  
+def thank_you():
+    first = request.args.get('first')
+    last = request.args.get('last')
+    return render_template('thank_you.html', first=first,last=last)
 
 
 
