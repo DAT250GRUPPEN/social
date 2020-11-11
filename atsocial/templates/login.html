@@ -132,10 +132,11 @@
                             <div class="col-md-12 mb-3">
                                 <!-- Må sjekke data-target!  har også bare kjørt på med <a href="registration.html"> tidligere. får se om det er nødvendig.
                                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="register">Register</button> -->
-                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="register" >Register</button>
+                               
+                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registrationModa" data-whatever="registration" >Register</button>
                                 <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#duerloggetinn" >Sign in</button>
-                                
-                                
+
+
                                     
                             </div>
                         </div></div></div>
@@ -149,37 +150,133 @@
 
 
 
+          
+
+
+
 
 
 <!--           REGISTRERING STARTER HER                                      -->
 <!--           REGISTRERING STARTER HER                                      -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+
+
+
+
+    <div class="modal fade" id="registrationModa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" href="registration">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">  
+
+
+
+                    <!-- FORM starter --> <!-- FORM starter --> <!-- FORM starter -->
+                    <form>
+                        <!-- FORM starter --> <!-- FORM starter --> <!-- FORM starter -->
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="first">First name</label>
+                                <input type="text" class="form-control" id="first" placeholder="First name..." required>
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
+                            <label for="last">Last name</label>
+                                <input type="text" class="form-control" id="last" placeholder="Last name..." required>
+                        </div>
+
+
+                        <div class="col-md-12 mb-3">
+                            <label for="validationDefault03">E-mail</label>
+                                <input type="email" class="form-control" id="validationDefault03" placeholder="E-mail..." required>
+                        </div> 
+                     <!-- <--- USIKKER PÅ OM DENNE SKULLE LUKKES HER...   --> 
+
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend">
+                                <div class="container">
+                                    <div class="row">
+                                        <label for="username">Username </label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm1 mb-3 ">
+                                            <span class="input-group-text">@</span> <!-- Se her for ref/navn på meldinger -->
+                                        </div>
+                                        <div class="col-sm1">
+                                            <input type="text" id="username" class="form-control fix-rounded-right" placeholder="Username..." required>
+                                        </div>
+                                        <div class="invalid-feedback">Please choose a username.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="validationDefault04"><br> Gender</label>
+                                    <select class="custom-select" id="validationDefault04" required>
+                                        <option selected disabled value="">...</option>
+                                        <option value="female">Female</option>
+                                        <option value="male">Male</option>
+                                        <option value="notdefined">None or both of the above</option>
+                                    </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+                            <label for="validationDefault05"> Something about yourself</label>
+                                <input type="text" class="form-control" id="validationDefault05" placeholder="Write here..." required>
+                        </div>
+                                            
+                                            
+                        <div class="col-md-12 mb-3">
+                            <label for="inputPassword5">Password</label>
+                                <input type="password" id="inputPassword5" class="form-control " aria-describedby="passwordHelpBlock" required>
+                                <small id="passwordHelpBlock" class="text-muted">
+                                Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                                </small>
+                        </div>                   
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                <div class="col-md-12 mb-3">
+                                    <label class="form-check-label" for="invalidCheck2">
+                                        I am over 18 years old
+                                    </label>
+                            </div></div></div>
+                        </div>
+                        </div>
+                        
+                            
+                        
+                    </form>
+    
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a class="btn btn-primary" href="/" role="button">Submit</a>
+                </div>
+                </div>
             </div>
-            <div class="modal-body">  
+        </div>
+    </div>
+  
 
-{% block registrering %}
-{% endblock registrering %}
-<div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-    <a class="btn btn-primary" href="/" role="button">Submit</a>
-</div>
-    <!-- HER MÅ INFO FRA REGISTRERINGEN LEGGES TIL I DATABASEN--> 
-</div>
-</div>
-</div>
-</div>
-</div>
+
+
+
+
+    
+    <!-- HER MÅ INFO FRA REGISTRERINGEN LEGGES TIL I DATABASEN-->  
+
 
 <!--        REGISTRERING SLUTTER HER        -->
 <!--        REGISTRERING SLUTTER HER        -->
-
 
 
 
@@ -207,11 +304,10 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button><br>
-        </div>
-    <!--       OG HER SLUTTER DEN "UNØDVENDIGE" KODEN SOM BARE ER FOR SHOW , HER MÅ VI SETTE PÅ NOE SIKKERHET...       -->                 
-    <!--       OG HER SLUTTER DEN "UNØDVENDIGE" KODEN SOM BARE ER FOR SHOW , HER MÅ VI SETTE PÅ NOE SIKKERHET...       -->                 
 
-    
+        </div>
+    <!--       OG HER SLUTTER login -popup, HER MÅ VI SETTE PÅ NOE SIKKERHET...       -->                 
+    <!--       OG HER SLUTTER login -popup, HER MÅ VI SETTE PÅ NOE SIKKERHET...       -->       
 
 
 
