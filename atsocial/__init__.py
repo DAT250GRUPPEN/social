@@ -1,7 +1,7 @@
 import os #allowing us to grab directory and filepath names
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+#from flask_migrate import Migrate
 from flask_login import LoginManager
 
 
@@ -27,7 +27,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
 db = SQLAlchemy(app)
-Migrate(app,db)
+#Migrate(app,db)
 
 
 ###########################
