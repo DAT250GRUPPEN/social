@@ -1,6 +1,4 @@
 
-
-
  
 
 {% extends 'layout.html' %}
@@ -17,6 +15,19 @@
 
     
 <!-- Dette er når en går inn i siden -->
+
+{% block forstevenstretittel %}
+Dine følgere:
+{% endblock forstevenstretittel %}
+
+{% block forstevenstre %}
+<p> Du har så og så mange følgere :)</p>
+{% endblock forstevenstre %}
+
+
+
+
+
 {% block content%}
 <div class="jumbotron">
 <p>Velkommen til siden din!</p>
