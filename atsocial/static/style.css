@@ -10,7 +10,8 @@
     p {color: #5D6D7E;}
     ul {color: #5D6D7E;}
     .meny {
-            /*  Prøv å få denne stickyen til å funke senere! feilen som skjer er at dropdown menyen klikker.*/
+        
+        /*  Prøv å få denne stickyen til å funke senere! feilen som skjer er at dropdown menyen klikker.*/
         /*  position: -webkit-sticky; /* **Safari trenger denne*/
         /*  position: sticky; /* *Slik at menyen holder seg på toppen når en scroller*/
         /*  top: 0; /* må definere */
