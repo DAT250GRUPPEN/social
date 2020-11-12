@@ -44,10 +44,6 @@ def index():            # pages kunne ha hettet noe annet og att lik pages: side
 def myprofile():
     return render_template('myprofile.html') 
 
-@app.route('/registration')  # Dette er localhost:5000
-def reg():
-    return render_template('registration.html') 
-
 @app.route('/thank_you')  
 def thank_you():
     first = request.args.get('first')
@@ -71,3 +67,21 @@ def username(userspages_id):
     return render_template('users.html', usernumber = userspages[userspages_id - 1])
     
 
+
+
+
+
+# Dropdown meny:
+
+@app.route('/settings')  # SETTINGS
+def settings():
+    return render_template('settings.html') 
+
+@app.route('/faq')  # FAQ
+def faq():
+    return render_template('index.html') 
+
+
+@app.route('/logout')  # LOGOUT
+def logout():
+    return render_template('login.html') 
