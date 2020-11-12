@@ -2,7 +2,7 @@ from atsocial import db,login_manager
 from datetime import datetime
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
-file = codecs.open("login.html", "r", "utf-8") #usikker
+
 
 # By inheriting the UserMixin we get access to a lot of built-in attributes
 # which we will be able to call in our views!
@@ -27,7 +27,7 @@ class User(db.Model, UserMixin):
     #Creating columns in the db
     id = db.Column(db.Integer, primary_key = True) #Unique id to each user 
     profile_image = db.Column(db.String(20), nullable=False, default='default_profile.png')
-    email = db.Column(db.String(64), unique=True, index=True, id="inputEmail3") #usikker
+    email = db.Column(db.String(64), unique=True, index=True) 
     username = db.Column(db.String(64), unique=True, index=True)
     password_hash = db.Column(db.String(128))
     # This connects Posts to a User Author.
