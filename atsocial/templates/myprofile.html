@@ -21,13 +21,20 @@
 <!-- Venstre kolonne--><!-- Venstre kolonne-->
 
 
+     
+
 {% block forstevenstre %}
-<h4 class="w3-opacity">
-    Followers
-</h4>
-<hr> <!-- dette er en strek-->
-<p> ... så mange følger deg!...</p>
+    <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+        <h4 class="w3-opacity">
+        Followers
+        </h4>
+        <hr> <!-- dette er en strek-->
+        <p> ... så mange følger deg!...</p>
+        </div>
+    </div>
 {% endblock forstevenstre %}
+
     
 {% block andrevenstre %}
     <!-- meny lignende greie... kanskje denne brukes til hashtag elns -->
@@ -81,11 +88,12 @@
 
 <!-- Midterste kolonne--><!-- Midterste kolonne-->
 <!-- Midterste kolonne--><!-- Midterste kolonne-->
-
     {% block forstemidten %}
     <h4 class="w3-center">    
         Your name
     </h4>
+    Profilbilde
+
     <hr>
     <h6 class="w3-opacity">
         Bio her: <br> - Om meg <br>- Osv ...
@@ -102,17 +110,18 @@
     <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
         <span class="w3-right w3-opacity"></span>
         <h4>Your pictures</h4>
-        <hr><br>
+        <hr>
         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-upload" ></i>  Upload</button> 
         </span>
-
-        <p>her kan bildene være...</p>
+        <br>
           <div class="w3-row-padding" style="margin:0 -16px">
+
+            <!-- For hvert bilde som blir lasta opp må denne komme fram!-->
+            <!-- For hvert bilde som blir lasta opp må denne komme fram!-->
             <div class="w3-half">
-              <img src="https://unsplash.com/photos/iwabZE-qN_U" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
-            </div>
-            <div class="w3-half">
-              <img src="/w3images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
+              <img src="" style="width:100%" alt="fjell" class="w3-margin-bottom">
+            <!-- For hvert bilde som blir lasta opp må denne komme fram!-->
+            <!-- For hvert bilde som blir lasta opp må denne komme fram!-->
           </div>
         </div>
       </div>
@@ -130,11 +139,17 @@
 <!-- Høyre kolonne--><!-- Høyre kolonne-->
 <!-- Høyre kolonne--><!-- Høyre kolonne-->    
     {% block forstehoyre %}
+    <div class="w3-card w3-round w3-white w3-center">
+        <div class="w3-container">
+
     <h4 class="w3-opacity">
     Following:
     </h4>
     <hr>  
     <p>... så mange følger du! ... </p>
+
+        </div>
+    </div>
     {% endblock forstehoyre %}
 
 <!-- Høyre kolonne slutt--><!-- Høyre kolonne slutt-->
