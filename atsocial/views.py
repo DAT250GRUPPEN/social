@@ -1,7 +1,10 @@
-import datetime
-from flask import Flask, render_template, Blueprint, request
-from atsocial import app
-
+from flask import render_template, url_for, flash, redirect, request, Blueprint
+from flask_login import login_user, current_user, logout_user, login_required
+from atsocial import db,app
+from werkzeug.security import generate_password_hash,check_password_hash#,check_password
+from atsocial.models import User, Post
+from atsocial.forms import RegistrationForm, LoginForm, UpdateUserForm
+from atsocial.users.picture_handler import add_profile_pic
 
 ################################################################################################
 # Disse under er til testing...
@@ -22,9 +25,25 @@ views = Blueprint("views",__name__)
 
 
 # LOGIN -siden
-@app.route('/')  # Dette er localhost:5000 
+@views.route("/",methods=["GET","POST"])
 def login():
-    return render_template('login.html') 
+    
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+
+        if user.check_password(form.password.data) and user is not None:
+
+            login_user(user)
+            flash("Log inn success!")
+
+            next = request.args.get("next")
+
+            if next == None or not next[0]=="/":
+                next = url_for("views.login")
+
+            return redirect(next)
+    return render_template("login.html",form=form)
 
 
 # THANKYOU for registering -siden
@@ -33,6 +52,22 @@ def thank_you():
     first = request.args.get('first')
     last = request.args.get('last')
     return render_template('thank_you.html', first=first,last=last)
+
+
+#@views.route("/register",methods=["GET","POST"])
+#def register():
+    
+    #form = RegistrationForm()
+   # if form.validate_on_submit():
+        #user = User(first_name=form.first_name.data,
+                    #last_name=form.last_name.data,
+                    #email=form.email.data,
+                    #password=form.password.data)
+
+       # db.session.add(user)
+      #  db.session.commit()
+     #   return redirect("views.register")
+    #return render_template("register.html", form=form)
 
 
 

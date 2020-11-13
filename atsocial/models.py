@@ -22,18 +22,23 @@ def load_user(user_id):
 class User(db.Model, UserMixin):
 
     #Making a table name manually
-    __tablename__ = 'users'
+    #__tablename__ = 'users'
 
     #Creating columns in the db
     id = db.Column(db.Integer, primary_key = True) #Unique id to each user 
     profile_image = db.Column(db.String(20), nullable=False, default='default_profile.png')
+    first_name = db.Column(db.String(20),nullable=False,index=True)
+    last_name = db.Column(db.String(20),nullable=False,index=True)
     email = db.Column(db.String(64), unique=True, index=True) 
+    #gender = db.Column(db.)
     username = db.Column(db.String(64), unique=True, index=True)
     password_hash = db.Column(db.String(128))
     # This connects Posts to a User Author.
     posts = db.relationship('Post', backref='author', lazy=True)
 
-    def __init__(self, email, username, password): 
+    def __init__(self, first_name,last_name,email, username, password): 
+        self.first_name = first_name
+        self.last_name = last_name
         self.email = email
         self.username = username
         self.password_hash = generate_password_hash(password)
