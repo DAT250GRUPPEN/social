@@ -19,12 +19,14 @@
 
 <!-- Venstre kolonne--><!-- Venstre kolonne-->
 <!-- Venstre kolonne--><!-- Venstre kolonne-->
-{% block forstevenstretittel %}
-Dine følgere:
-{% endblock forstevenstretittel %}
+
 
 {% block forstevenstre %}
-<p> Du har så og så mange følgere :)</p>
+<h4 class="w3-opacity">
+    Followers
+</h4>
+<hr> <!-- dette er en strek-->
+<p> ... så mange følger deg!...</p>
 {% endblock forstevenstre %}
     
 {% block andrevenstre %}
@@ -84,7 +86,7 @@ Dine følgere:
     <h4 class="w3-center">    
         Your name
     </h4>
-
+    <hr>
     <h6 class="w3-opacity">
         Bio her: <br> - Om meg <br>- Osv ...
     </h6>
@@ -99,11 +101,11 @@ Dine følgere:
 
     <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
         <span class="w3-right w3-opacity"></span>
+        <h4>Your pictures</h4>
+        <hr><br>
         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-upload" ></i>  Upload</button> 
         </span>
-        <h4>Your pictures</h4><br>
-        <hr>
-        <hr class="w3-clear">
+
         <p>her kan bildene være...</p>
           <div class="w3-row-padding" style="margin:0 -16px">
             <div class="w3-half">
@@ -127,10 +129,12 @@ Dine følgere:
 
 <!-- Høyre kolonne--><!-- Høyre kolonne-->
 <!-- Høyre kolonne--><!-- Høyre kolonne-->    
-    {% block forstehoyretittel %}
-    {% endblock forstehoyretittel %}
-
     {% block forstehoyre %}
+    <h4 class="w3-opacity">
+    Following:
+    </h4>
+    <hr>  
+    <p>... så mange følger du! ... </p>
     {% endblock forstehoyre %}
 
 <!-- Høyre kolonne slutt--><!-- Høyre kolonne slutt-->
