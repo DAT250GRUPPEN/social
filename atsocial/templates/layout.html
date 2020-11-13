@@ -122,20 +122,12 @@
 
 
 
-
-
-
-
             <!-- Venstre kolonne starter her-->
             <!-- Venstre kolonne starter her-->
             <div class="w3-col m3">
-
-              <div class="w3-card w3-round w3-white">
-                <div class="w3-container">
-                 {% block forstevenstre %}
-                 {% endblock forstevenstre %}
-                </div>
-              </div>
+                {% block forstevenstre %}
+                {% endblock forstevenstre %}
+              
               <br>
 
 
@@ -192,14 +184,10 @@
             <!-- Right Column --><!-- høyre kolonne-->
             <!-- Right Column --><!-- høyre kolonne-->
             <div class="w3-col m2">
-
-              <div class="w3-card w3-round w3-white w3-center">
-                <div class="w3-container">
                 
-                    {% block forstehoyre %}
-                    {% endblock forstehoyre %}
-                </div>
-              </div>
+                {% block forstehoyre %}
+                {% endblock forstehoyre %}
+                
               <br>
             <!-- Høyre kolonne slutt--><!-- Høyre kolonne slutt-->
             <!-- Høyre kolonne slutt--><!-- Høyre kolonne slutt-->
@@ -253,7 +241,8 @@
 
         <footer class="w3-container w3-padding-16">
                 <h5>Footer</h5>
-                <p>Powered by <a href="#" target="_blank"> group 27</a></p>        
+                <p>Powered by <a href="{{url_for('group27')}}"> group 27</a></p>        
+                <!-- <a href="{{url_for('group27')}}" target="_blank"> -->
         </footer>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

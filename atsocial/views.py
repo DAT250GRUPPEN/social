@@ -98,3 +98,9 @@ def faq():
 @app.route('/logout')  # LOGOUT
 def logout():
     return render_template('login.html') 
+
+
+# Footer: group 27
+@app.route('/group27')  # GROUP
+def group27():
+    return render_template('group27.html') 
