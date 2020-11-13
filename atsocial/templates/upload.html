@@ -13,10 +13,37 @@
 {% endblock uploadactive %}
 
 
-<!-- Dette er når en går inn i siden -->
-{% block content%}
-<h1>uploaduploaduploaduploadupload</h1>
-{% endblock content %}
 
-<!-- Dette er hva som skjer per side man klikker seg inn på fra hovedmenyen -->
+
+
+
+{% block forstevenstre %}
+{% endblock forstevenstre %}
+
+
+
+
+{% block forstemidten %}
+
+
+<h4 class="w3-center">    
+    Upload
+</h4>
+
+<hr>
+<h6 class="w3-opacity">
+    <p>Click on the "Choose File" button to upload a file:</p>
+</h6>
+<form action="/action_page.php">
+    <input type="file" id="myFile" name="filename">
+    <input type="submit" >
+</form><br><br>
+{% endblock forstemidten %}
+    
+
+{% block forstehoyre %}
+    
+{% endblock forstehoyre %}
+    
+
 
