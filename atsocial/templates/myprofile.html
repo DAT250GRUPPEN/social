@@ -16,6 +16,9 @@
     
 <!-- Dette er når en går inn i siden -->
 
+
+<!-- Venstre kolonne--><!-- Venstre kolonne-->
+<!-- Venstre kolonne--><!-- Venstre kolonne-->
 {% block forstevenstretittel %}
 Dine følgere:
 {% endblock forstevenstretittel %}
@@ -23,11 +26,6 @@ Dine følgere:
 {% block forstevenstre %}
 <p> Du har så og så mange følgere :)</p>
 {% endblock forstevenstre %}
-
-
-
-
-
     
 {% block andrevenstre %}
     <!-- meny lignende greie... kanskje denne brukes til hashtag elns -->
@@ -70,16 +68,77 @@ Dine følgere:
         </div>      
     </div>
     <br>
-
     {% endblock andrevenstre %}
-
-{% block content%}
-<div class="jumbotron">
-<p>Velkommen til siden din!</p>
-</div>
+<!-- Venstre kolonne slutt--><!-- Venstre kolonne slutt-->
+<!-- Venstre kolonne slutt--><!-- Venstre kolonne slutt-->
 
 
-{% endblock content %}
+
+
+
+
+<!-- Midterste kolonne--><!-- Midterste kolonne-->
+<!-- Midterste kolonne--><!-- Midterste kolonne-->
+
+    {% block forstemidten %}
+    <h4 class="w3-center">    
+        Your name
+    </h4>
+
+    <h6 class="w3-opacity">
+        Bio her: <br> - Om meg <br>- Osv ...
+    </h6>
+
+    <button type="button" class="w3-button w3-theme"><i class="fa fa-pencil"></i> Edit profile </button> 
+    {% endblock forstemidten %}
+
+
+    
+    {% block andremidten %}
+
+
+    <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <span class="w3-right w3-opacity"></span>
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-upload" ></i>  Upload</button> 
+        </span>
+        <h4>Your pictures</h4><br>
+        <hr>
+        <hr class="w3-clear">
+        <p>her kan bildene være...</p>
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half">
+              <img src="https://unsplash.com/photos/iwabZE-qN_U" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+            </div>
+            <div class="w3-half">
+              <img src="/w3images/nature.jpg" style="width:100%" alt="Nature" class="w3-margin-bottom">
+          </div>
+        </div>
+      </div>
+    {% endblock andremidten %}
+<!-- Midterste kolonne slutt--><!-- Midterste kolonne slutt-->
+<!-- Midterste kolonne slutt--><!-- Midterste kolonne slutt-->
+
+
+
+
+
+
+
+
+<!-- Høyre kolonne--><!-- Høyre kolonne-->
+<!-- Høyre kolonne--><!-- Høyre kolonne-->    
+    {% block forstehoyretittel %}
+    {% endblock forstehoyretittel %}
+
+    {% block forstehoyre %}
+    {% endblock forstehoyre %}
+
+<!-- Høyre kolonne slutt--><!-- Høyre kolonne slutt-->
+<!-- Høyre kolonne slutt--><!-- Høyre kolonne slutt-->
+
+
+
+
 
 <!-- Dette er hva som skjer per side man klikker seg inn på fra hovedmenyen -->
 <!-- <h1> {{main_user.name|capitalize}} {{name}}</h1> -->
