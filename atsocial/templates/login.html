@@ -75,10 +75,6 @@
     </style>    
 <!--css er ferdig her-->
 <!--css er ferdig her-->
-
-
-
-
 </head>
 
 
@@ -102,7 +98,7 @@
                         <span class="fa fa-at logo"></span><!--<span class="glyphicon glyphicon-globe logo slideanim"></span>  TROR IKKE VI TRENGER SLIDEANIM-->
                     </div>   
 
-            <form aria-hidden="true"> <!--Hva skal siden gjøre etter "submit"?--> 
+            <form aria-hidden="true"> 
                     {% block content %}
                     <form method="POST">
                         <div class="form-group row">
@@ -127,45 +123,23 @@
                                 </div>
                             </div>
                         </div>
-                    </form>    
-                    
 
-                        <!--<div class="form-group row"> -->
                     <div class="form-group row">
                         <div class="col-md-12 mb-3">
-                        </div>
-                    </div>
+                            <div class="col-sm-10">
 
-
-
-
-                    <div class="form-group row">  <!-- DENNE ER OK... SÅ DE ER NOE NEDENFOR SOM KLIKKER...-->
-                        <div class="col-md-12 mb-3">
-                            <div class="form-check">                                   
-                                <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                <label class="form-check-label" for="gridCheck1"><br> Remember me</label>
-                        <br><br>
-                            
-
-
-
-
-                            <div class="form-group row">
-                                <!--<div class="form-group  row"> -->
-                                <div class="col-md-12 mb-3">
-                                <!-- Må sjekke data-target!  har også bare kjørt på med <a href="registration.html"> tidligere. får se om det er nødvendig.
-                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="register">Register</button> -->
-                               
-                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registrationModa" data-whatever="registration" >Register</button>
-                                {{ form.submit(class="btn btn-primary") }}
-                                {% endblock %}
-
-                                    
+                                <!-- Må sjekke data-target!  har også bare kjørt på med <a href="registration.html"> tidligere. får se om det er nødvendig.-->
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registrationModa" data-whatever="registration" >Register</button>
+                            {{ form.submit(class="btn btn-primary") }}
                             </div>
-                        </div></div></div>
+                        </div>
+                    </form>    
+                        {% endblock %}
                     </div>
                 </div>
+                </div>
             </div>
+            
     <!--            Login-siden er ferdig her           -->
     <!--            Login-siden er ferdig her           -->
 
@@ -181,9 +155,6 @@
 
 <!--           REGISTRERING STARTER HER                                      -->
 <!--           REGISTRERING STARTER HER                                      -->
-
-
-
 
     <div class="modal fade" id="registrationModa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" href="registration">
         <div class="modal-dialog">
