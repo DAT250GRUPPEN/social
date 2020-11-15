@@ -1,3 +1,5 @@
+{% extends 'login.html' %}
+
 {% block content %}
 <form method="POST">
 {# This hidden_tag is a CSRF security feature. #}
@@ -7,6 +9,6 @@
 {{ form.email.label }} {{ form.email() }}<br>
 {{ form.username.label }} {{ form.username() }}<br>
 {{ form.password.label }} {{ form.password() }}<br>
-{{ form.submit() }}
+{{ form.submit(href="{{url_for('views.register')}}") }}
 </form>
 {% endblock %}
