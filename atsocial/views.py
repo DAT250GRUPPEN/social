@@ -23,6 +23,10 @@ views = Blueprint("views",__name__)
 
 
 
+views = Blueprint("views",__name__)
+
+
+
 
 # LOGIN -siden
 @views.route("/",methods=["GET","POST"])
@@ -47,27 +51,28 @@ def login():
 
 
 # THANKYOU for registering -siden
-@app.route('/thank_you')  
+@views.route('/thank_you')  
 def thank_you():
     first = request.args.get('first')
     last = request.args.get('last')
     return render_template('thank_you.html', first=first,last=last)
 
 
-#@views.route("/register",methods=["GET","POST"])
-#def register():
+@views.route("/register",methods=["GET","POST"])
+def register():
     
-    #form = RegistrationForm()
-   # if form.validate_on_submit():
-        #user = User(first_name=form.first_name.data,
-                    #last_name=form.last_name.data,
-                    #email=form.email.data,
-                    #password=form.password.data)
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(first_name=form.first_name.data,
+                    last_name=form.last_name.data,
+                    email=form.email.data,
+                    username=form.username.data,
+                    password=form.password.data)                   
 
-       # db.session.add(user)
-      #  db.session.commit()
-     #   return redirect("views.register")
-    #return render_template("register.html", form=form)
+        db.session.add(user)
+        db.session.commit()
+        return redirect("views.login")
+    return render_template("register.html", form=form)
 
 
 
@@ -85,33 +90,65 @@ def thank_you():
 # 
     
 # HOME -siden
-@app.route('/index')
+@views.route('/index')
+#@login_required
 def index():          
-    return render_template('index.html', pages=pages) 
+    return render_template('index.html') #pages=pages
 
 # MYPROFILE -siden
-@app.route('/myprofile')  
-def myprofile():
-    return render_template('myprofile.html') 
+#@views.route('/myprofile')  
+#def myprofile():
+ #   return render_template('myprofile.html') 
 
 # UPLOAD -siden
-@app.route('/upload') 
+@views.route('/upload') 
 def uploads():
     return render_template('upload.html') 
 
 # MYFRIENDS -siden
-@app.route('/myfriends')  
+@views.route('/myfriends')  
 def myfriends():
     return render_template('myfriends.html') 
 
 
-@app.route('/users/<int:userspages_id>') # Husk at id-en for input username i registreringen heter "username"
-def username(userspages_id):
-    return render_template('users.html', usernumber = userspages[userspages_id - 1])
+#@views.route('/users/<int:userspages_id>') # Husk at id-en for input username i registreringen heter "username"
+#def username(userspages_id):
+   # return render_template('users.html', usernumber = userspages[userspages_id - 1])
+
+@views.route("/<username>")
+def user_posts(username):
+    page = request.args.get("page",1,type=int)
+    user =  User.query.filter_by(username=username).first_or_404()
+    post = Post.query.filter_by(author=user).order_by(Post.date.desc().pageinate(page=page,per_page=4))
+    return render_template("myprofile.html")
 
 
     
-    
+@views.route("/myprofile",methods=["GET","POST"])
+@login_required
+def myprofile():
+    form = UpdateUserForm()
+    if form.validate_on_submit():
+
+        if form.picture.data:
+            username = current_user.username
+            pic = add_profile_pic(form.picture.data,username)
+            current_user.profile_image = pic
+        
+        current_user.username = form.username.data
+        current_user.email = form.email.data
+        db.session.commit()
+
+        return redirect("views.myprofile")
+
+    elif request.method == "GET":
+        form.username.data = current_user.username
+        form.email.data = current_user.email
+
+    profile_image = url_for("static",filename="profile_pics/"+current_user.profile_image)
+    return render_template("myprofile.html",profile_image=profile_image,form=form)
+
+
 
 
 
@@ -119,21 +156,22 @@ def username(userspages_id):
 
 # Dropdown meny:
 
-@app.route('/settings')  # SETTINGS
+@views.route('/settings')  # SETTINGS
 def settings():
     return render_template('settings.html') 
 
-@app.route('/faq')  # FAQ
+@views.route('/faq')  # FAQ
 def faq():
     return render_template('index.html') 
 
 
-@app.route('/logout')  # LOGOUT
+@views.route('/logout')  # LOGOUT
 def logout():
-    return render_template('login.html') 
+    logout_user()
+    return redirect("views.login")
 
 
 # Footer: group 27
-@app.route('/group27')  # GROUP
+@views.route('/group27')  # GROUP
 def group27():
     return render_template('group27.html') 

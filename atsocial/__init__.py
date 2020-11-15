@@ -7,19 +7,11 @@ from flask_login import LoginManager
 
 app = Flask(__name__)
 
-#############################################################################
-############ CONFIGURATIONS (CAN BE SEPARATE CONFIG.PY FILE) ###############
-###########################################################################
 
-# Remember you need to set your environment variables at the command line
-# when you deploy this to a real website.
-# export SECRET_KEY=mysecret
-# set SECRET_KEY=mysecret
 app.config['SECRET_KEY'] = 'mysecret'
 
-#################################
-### DATABASE SETUPS ############
-###############################
+
+#Database setups
 
 basedir = os.path.abspath(os.path.dirname(__file__)) #Choosing a directory where we put our database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
@@ -27,28 +19,23 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
 db = SQLAlchemy(app)
-#Migrate(app,db)
+Migrate(app,db)
 
 
-###########################
-#### LOGIN CONFIGS #######
-#########################
+
+#Login configurations
+
 
 login_manager = LoginManager()
 
-# We can now pass in our app to the login manager
-login_manager.init_app(app) ########
-
-# Tell users what view to go to when they need to login.
-login_manager.login_view = "views.login" ######
+login_manager.init_app(app) 
+login_manager.login_view = "views.login" 
 
 
-###########################
-#### BLUEPRINT CONFIGS #######
-#########################
 
-# Import these at the top if you want
-# We've imported them here for easy reference
+#Blueprint configurations
+
+
 from atsocial.views import views
 app.register_blueprint(views)
 
