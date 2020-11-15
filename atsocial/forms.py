@@ -1,7 +1,7 @@
 # Form Based Imports
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField
-from wtforms.validators import DataRequired,Email,EqualTo
+from wtforms.validators import DataRequired,Email,EqualTo, Length
 from wtforms import ValidationError
 from flask_wtf.file import FileField, FileAllowed
 
@@ -25,8 +25,8 @@ class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     #gender = SelectField()
     info = StringField("Something about yourself")
-    password = PasswordField('Confirm password', validators=[DataRequired()])
-    #password = PasswordField('Password', validators=[DataRequired(), EqualTo('pass_confirm', message='Passwords Must Match!')])
+    pass_confirm = PasswordField('Confirm password', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired(), EqualTo('pass_confirm', message='Passwords Must Match!'),Length(min=-8)])
     #pass_confirm = PasswordField('Confirm password', validators=[DataRequired()])
     submit = SubmitField('Register!')
 
