@@ -22,12 +22,6 @@ mainuser = [{'id': 1, 'first':'ola', 'last':'nordmann', 'email':'olanordmann@ola
 views = Blueprint("views",__name__)
 
 
-
-views = Blueprint("views",__name__)
-
-
-
-
 # LOGIN -siden
 @views.route("/",methods=["GET","POST"])
 def login():

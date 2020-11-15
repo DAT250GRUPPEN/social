@@ -4,11 +4,21 @@
 <form method="POST">
 {# This hidden_tag is a CSRF security feature. #}
 {{ form.hidden_tag() }}
-{{ form.first_name.label }} {{ form.first_name() }}<br>
-{{ form.last_name.label }} {{ form.last_name() }}<br>
-{{ form.email.label }} {{ form.email() }}<br>
-{{ form.username.label }} {{ form.username() }}<br>
-{{ form.password.label }} {{ form.password() }}<br>
-{{ form.submit(href="{{url_for('views.register')}}") }}
+{{ form.first_name.label }}
+{{ form.first_name() }}<br>
+
+{{ form.last_name.label }} 
+{{ form.last_name() }}<br>
+
+{{ form.email.label }} 
+{{ form.email() }}<br>
+
+{{ form.username.label }} 
+{{ form.username() }}<br>
+
+{{ form.password.label }} 
+{{ form.password() }}<br><br>
+
+{{ form.submit(href="{{url_for('views.register')}}", class="btn btn-primary") }}
 </form>
 {% endblock %}
