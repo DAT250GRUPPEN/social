@@ -102,7 +102,7 @@ def index():
 
 # UPLOAD -siden
 @views.route('/upload') 
-def uploads():
+def upload():
     return render_template('upload.html') 
 
 # MYFRIENDS -siden

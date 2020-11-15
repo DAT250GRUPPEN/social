@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  
-  
     <head>
         <title>
             @social
@@ -32,8 +30,6 @@
     </head>
 
     <body>
-      {% if current_user.is_authenticated %}
-
         <div class="w3-top"> 
         <ul class="meny"> <!--Bruker bare list of links til navbar, meny knappene innhold hver for seg-->
 
@@ -43,20 +39,20 @@
             <li><a 
             {% block homeactive %}  
             {% endblock homeactive %}
-                 href="{{url_for('views.index')}}">
+                 href="views.index">
                 <div class="tooltip"><i class="fa fa-home"></i>
                 <span class="tooltiptext">HOME</span>
                 </div></a></li>
             <li><a 
                 {% block uploadactive %}
                 {% endblock uploadactive %}
-                href="{{url_for('views.upload')}}">
+                href="views.upload">
                 <div class="tooltip"><i class="fa fa-cloud-upload"></i><span class="tooltiptext">UPLOAD</span>
                 </div></a></li>
             <li><a 
                 {% block friendsactive %}
                 {% endblock friendsactive %}
-                href="{{url_for('views.myfriends')}}">
+                href="views.myfriends">
                 <div class="tooltip"><i class="fa fa-users"></i><span class="tooltiptext">FRIENDS</span>
                 </div></a></li>
 
@@ -67,7 +63,6 @@
                 href="{{url_for('views.myprofile')}}">
                 <div class="tooltip"><i class="fa fa-id-badge"></i><span class="tooltiptext">MY PROFILE</span>
                 </div></a></li>
-                
 
             <!-- Hovedmeny ferdig-->
             <!-- Hovedmeny ferdig-->
@@ -81,8 +76,8 @@
                 <li class="dropdown" style="float:right;"> <!--settes til høyre-->
                     <a href="javascript:void(0)" class="dropbtn"><i class="fa fa-bars"></i></a>
                     <div class="dropdown-content">
-                    <a href="{{url_for('settings')}}"><i class="fa fa-cogs"></i> Settings</a>
-                    <a href="{{url_for('faq')}}"><i class="fa fa-question-circle-o"></i> Help/FAQ</a>
+                    <a href="{{url_for('views.settings')}}"><i class="fa fa-cogs"></i> Settings</a>
+                    <a href="{{url_for('views.faq')}}"><i class="fa fa-question-circle-o"></i> Help/FAQ</a>
                     <a href="logout"><i class="fa fa-lock"></i> Log Out</a>
                     </div> 
                     </li>
@@ -246,12 +241,10 @@
 
         <footer class="w3-container w3-padding-16">
                 <h5>Footer</h5>
-                <p>Powered by <a href="{{url_for('group27')}}"> group 27</a></p>        
-                <!-- <a href="{{url_for('group27')}}" target="_blank"> -->
+                <p>Powered by <a href="{{url_for('views.group27')}}"> group 27</a></p>        
         </footer>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-        {% endif %}
     </body>
 </html>
 
