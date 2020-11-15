@@ -7,16 +7,7 @@ from atsocial.forms import RegistrationForm, LoginForm, UpdateUserForm
 from atsocial.users.picture_handler import add_profile_pic
 
 ################################################################################################
-# Disse under er til testing...
-pages = [{'id': 1, 'title': 'Upload','figure_name':'fa fa-cloud-upload'},\
-        {'id':2, 'title':'Friends', 'figure_name': 'fa fa-users'},\
-        {'id':3, 'title': 'Myprofile','figure_name': 'fa fa-id-badge'}]
-# Disse under er til testing...
-userspages = [{'id': 1, 'name':'test_user_en', 'password':'1234'},\
-              {'id': 2, 'name':'test_user_to', 'password':'3456'},\
-              {'id': 3, 'name':'teskt_user_tre', 'password':'6789'}]
-# Disse under er til testing...
-mainuser = [{'id': 1, 'first':'ola', 'last':'nordmann', 'email':'olanordmann@olanordmann','password':'1234'}]
+
 ################################################################################################
 
 views = Blueprint("views",__name__)
@@ -85,7 +76,7 @@ def register():
     
 # HOME -siden
 @views.route('/index')
-#@login_required
+@login_required
 def index():          
     return render_template('index.html') #pages=pages
 
@@ -96,11 +87,13 @@ def index():
 
 # UPLOAD -siden
 @views.route('/upload') 
+@login_required
 def upload():
     return render_template('upload.html') 
 
 # MYFRIENDS -siden
 @views.route('/myfriends')  
+@login_required
 def myfriends():
     return render_template('myfriends.html') 
 
@@ -151,15 +144,18 @@ def myprofile():
 # Dropdown meny:
 
 @views.route('/settings')  # SETTINGS
+@login_required
 def settings():
     return render_template('settings.html') 
 
 @views.route('/faq')  # FAQ
+@login_required
 def faq():
     return render_template('index.html') 
 
 
 @views.route('/logout')  # LOGOUT
+@login_required
 def logout():
     logout_user()
     return redirect("views.login")
@@ -167,5 +163,6 @@ def logout():
 
 # Footer: group 27
 @views.route('/group27')  # GROUP
+@login_required
 def group27():
     return render_template('group27.html') 
