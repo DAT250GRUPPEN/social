@@ -39,20 +39,20 @@
             <li><a 
             {% block homeactive %}  
             {% endblock homeactive %}
-                 href="views.index">
+                 href="{{url_for('views.index')}}">
                 <div class="tooltip"><i class="fa fa-home"></i>
                 <span class="tooltiptext">HOME</span>
                 </div></a></li>
             <li><a 
                 {% block uploadactive %}
                 {% endblock uploadactive %}
-                href="views.upload">
+                href="{{url_for('views.upload')}}">
                 <div class="tooltip"><i class="fa fa-cloud-upload"></i><span class="tooltiptext">UPLOAD</span>
                 </div></a></li>
             <li><a 
                 {% block friendsactive %}
                 {% endblock friendsactive %}
-                href="views.myfriends">
+                href="{{url_for('views.myfriends')}}">
                 <div class="tooltip"><i class="fa fa-users"></i><span class="tooltiptext">FRIENDS</span>
                 </div></a></li>
 

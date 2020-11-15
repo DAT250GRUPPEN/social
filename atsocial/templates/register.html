@@ -19,6 +19,6 @@
 {{ form.password.label }} 
 {{ form.password() }}<br><br>
 
-{{ form.submit(href="{{url_for('views.register')}}", class="btn btn-primary") }}
+{{ form.submit(class="btn btn-primary", href="{{url_for('views.login')}}")}}
 </form>
 {% endblock %}
